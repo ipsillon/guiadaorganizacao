@@ -16,9 +16,7 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/',  [ProfileController::class, 'index']);
 
 /*
 |--------------------------------------------------------------------------
