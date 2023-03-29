@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$profile->name - Guia da Organização</title>
+    <title>Guia da Organização</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/728f43781a.js" crossorigin="anonymous"></script>
@@ -145,7 +145,7 @@
                 <div class="dropdown text-end">
                     <a href="#" class=" link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <img src="{{ asset('storage/profiles/clarissa2.jpeg') }}" alt="mdo" class="rounded-circle"
+                        <img src="{{ asset('storage/profiles/1.jpeg') }}" alt="mdo" class="rounded-circle"
                             width="32" height="32">
                     </a>
                     <ul class="dropdown-menu border-0 text-small text-end rounded-0">
@@ -236,7 +236,7 @@
     </section>
 
     <section id="profile">
-        <div class="container-fluid mx-3 mt-3 mb-3">
+        <div class="container-fluid mt-3 mb-3">
             <div class="row">
                 @foreach ($profile as $item)
                     @if ($loop->index % 4 === 0)
@@ -248,7 +248,7 @@
                     <div class="card rounded-3 p-3 text-center">
                         <h2> {{ $item->name }} </h2>
                         <p> {{ $item->location }}</p>
-                        <img src="{{ asset('storage/profiles/clarissa2.jpeg') }}" alt="Clarissa" style="width:100%"
+                        <img src="storage/profiles/{{$item->profile_image}}" alt="{{$item->name}}" style="width:100%"
                             class="rounded-3 mb-2 mt-2">
                         <p><a href="/profile/{{ $item->id }}/show"class="btn-profile"><i
                                     class="fa-solid fa-chalkboard-user"></i> Ver Perfil</a></p>

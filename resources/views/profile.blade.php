@@ -144,7 +144,7 @@
                 <div class="dropdown text-end">
                     <a href="#" class=" link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <img src="{{ asset('storage/profiles/clarissa2.jpeg')}}" alt="mdo" class="rounded-circle" width="32" height="32">
+                        <img src="{{ asset("storage/profiles/$profile->profile_image")}}" alt="{{$profile->name}}" class="rounded-circle" width="32" height="32">
                     </a>
                     <ul class="dropdown-menu border-0 text-small text-end rounded-0">
                         <li><a class="nav-link px-2 text-dark" href="#">Editar Perfil</a></li>
@@ -248,7 +248,7 @@
                             <i class="fa-solid fa-star yellow"></i>
                             <i class="fa-solid fa-star yellow"></i>
                         </p>
-                        <img src="{{ asset('storage/profiles/clarissa2.jpeg')}}" alt="Clarissa" style="width:100%" class="rounded-3 mb-2 mt-2">
+                        <img src="{{ asset("storage/profiles/$profile->profile_image")}}" alt="{{$profile->name}}" style="width:100%" class="rounded-3 mb-2 mt-2">
 
                         <p><button class="btn-profile"><i class="fa-solid fa-chalkboard-user"></i> Visualizar
                                 Cursos</button></p>
