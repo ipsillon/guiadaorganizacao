@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController;
 
 
 
@@ -16,7 +17,9 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-Route::get('/',  [ProfileController::class, 'index']);
+Route::get('/profiles',  [ProfileController::class, 'index']);
+
+Route::get('/',  [HomeController::class, 'index']);
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +34,7 @@ Route::get('/',  [ProfileController::class, 'index']);
     | Pessoas
     |--------------------------------------------------------------------------
     */
-$prefix = 'profile';
+$prefix = 'profiles';
 $controller = 'ProfileController';
 
 Route::group(['prefix' => $prefix, 'as' => $prefix . '.'], function () use ($controller) {

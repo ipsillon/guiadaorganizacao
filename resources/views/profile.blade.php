@@ -137,25 +137,17 @@
 
             <a href="/"
                 class="ml-5 float-center d-flex mx-auto align-items-center text-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <img class="rounded mx-auto d-block" id="logo" src="/img/logo_320_100.png" width="200px">
+                <img class="rounded mx-auto d-block" id="logo" src="img/logo_320_100.png" width="200px">
             </a>
 
-            <div class="col-md-3 text-end mx-2">
-                <div class="dropdown text-end">
-                    <a href="#" class=" link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <img src="{{ asset("storage/profiles/$profile->profile_image")}}" alt="{{$profile->name}}" class="rounded-circle" width="32" height="32">
-                    </a>
-                    <ul class="dropdown-menu border-0 text-small text-end rounded-0">
-                        <li><a class="nav-link px-2 text-dark" href="#">Editar Perfil</a></li>
-                        <li><a class="nav-link px-2 text-dark" href="#">Configurações</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="nav-link px-2 text-dark" href="#">Sair</a></li>
-                    </ul>
-                </div>
-            </div>
+
+            <ul class="nav justify-content-end ">
+                <li><a href="/" class="nav-item px-2 text-small "> <small>Home</small></a></li>
+                <li><a href="profiles" class="nav-item px-2"><small>Personal Organizer</small></a></li>
+                <li><a href="#" class="nav-item px-2 "><small>Lojas</small></a></li>
+                <li><a href="#" class="nav-item px-2 "><small>Cursos</small></a></li>
+                <li><a href="#" class="nav-item px-2 "><small>Planos</small></a></li>
+            </ul>
         </header>
     </div>
 

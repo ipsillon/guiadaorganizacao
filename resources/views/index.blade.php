@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia da Organização</title>
+    <title>Clarissa Souza - Guia da Organização</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/728f43781a.js" crossorigin="anonymous"></script>
@@ -53,7 +53,6 @@
             margin: 0 10px;
         }
 
-        a.btn-profile,
         button.btn-profile {
             border: none;
             outline: 0;
@@ -92,6 +91,18 @@
 
         footer {
             color: #ff5ebc;
+        }
+        
+        .guia-font-color{
+            color: #ff5ebc!important;
+        }
+
+        .guia-background-color{
+            background-color: #ff5ebc!important;
+        }
+
+        .guia-border-color{
+            border-color: #ff5ebc!important;
         }
 
 
@@ -151,15 +162,16 @@
             </ul>
         </header>
     </div>
+
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-            <a class="navbar-brand mx-auto" href="#"><img src="/img/logo_320_100.png" width="200px"></a>
+            <a class="navbar-brand mx-auto" href="#"><img src="img/logo_320_100.png" width="200px"></a>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end ">
-                <li><a href="/" class="nav-link px-2 text-dark text-break">Home</a></li>
-                <li><a href="profiles" class="nav-link px-2 text-secondary">Personal Organizer</a></li>
+                <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
+                <li><a href="profile" class="nav-link px-2 text-dark text-break">Personal Organizer</a></li>
                 <li><a href="#" class="nav-link px-2 text-dark text-break">Lojas</a></li>
                 <li><a href="#" class="nav-link px-2 text-dark text-break">Cursos</a></li>
                 <li><a href="#" class="nav-link px-2 text-dark text-break">Planos</a></li>
@@ -201,12 +213,12 @@
                         </div>
                     </div>
                     <div class="carousel-item active">
-                        <img src="{{ asset('storage/banners/c4.png') }}" class="rounded-3 d-block w-100"
-                            alt="...">
+                        <img src="{{ asset('storage/banners/c4.png') }}" class="rounded-3 d-block w-100" alt="...">
                         <div class="container-fluid">
                             <div class="carousel-caption text-start p-3">
                                 <h4>Exemplo de chamada para parceiro.</h4>
                                 <p>Aqui uma descrição da campanha</p>
+
                             </div>
                         </div>
                     </div>
@@ -225,37 +237,109 @@
         </div>
     </section>
 
-    <section id="profile">
-        <div class="container-fluid mt-3 mb-3">
-            <div class="row">
-                @foreach ($profile as $item)
-                    @if ($loop->index % 4 === 0)
-                        </div>
-                        <div class="row">
-                    @endif
+    <div class="container-fluid px-4 py-5" id="custom-cards">
+        <h2 class="pb-2 border-bottom">Encontre</h2>
 
-                <div class="col-md-3 my-3">
-                    <div class="card rounded-3 p-3 text-center">
-                        <h2> {{ $item->name }} </h2>
-                        <p> {{ $item->location }}</p>
-                        <img src="storage/profiles/{{$item->profile_image}}" alt="{{$item->name}}" style="width:100%"
-                            class="rounded-3 mb-2 mt-2">
-                        <p><a href="/profile/{{ $item->id }}/show"class="btn-profile"><i
-                                    class="fa-solid fa-chalkboard-user"></i> Ver Perfil</a></p>
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div class="col">
+                <a href="profiles">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg"
+                        style="background-image: url('img/profissionais.png');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Personal Organizers</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg"
+                    style="background-image: url('img/cursos.png');">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Cursos</h3>
                     </div>
                 </div>
-                @endforeach
+            </div>
 
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg"
+                    style="background-image: url('img/lojas.png');">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Lojas e fornecedores</h3>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
+    <div class="container-fluid py-3">
+        <header>
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+                <h1 class="display-4 fw-normal text-secondary">Planos e valores</h1>
+            </div>
+        </header>
 
-    <div class="container">
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm guia-border-color">
+                        <div class="card-header py-3 guia-background-color text-white">
+                            <h4 class="my-0 fw-normal">Start</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">R$0<small
+                                    class="text-body-secondary fw-light">/mês</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Perfil da PO</li>
+                                <li>Cadastro de imagens de trabalhos realizados</li>
+                                <li>Contato</li>
+                                <li>Suporte por e-mail</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg guia-background-color text-white">Crie sua conta</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm guia-border-color">
+                        <div class="card-header py-3 guia-background-color text-white">
+                            <h4 class="my-0 fw-normal">PRO</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">--<small
+                                    class="text-body-secondary fw-light">/mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">                                
+                                <li>Perfil Start</li>
+                                <li>+ Cadastro de Cursos</li>                                
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg guia-background-color text-white">Em construção</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm guia-border-color">
+                        <div class="card-header py-3 guia-background-color text-white">
+                            <h4 class="my-0 fw-normal">VIP</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">--<small
+                                    class="text-body-secondary fw-light">/mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Plano Pró</li>                                
+                                <li>+ CRM</li>                               
+                                <li>+ Clube da Organização</li>                               
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg guia-background-color text-white">Em construção</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>        
+    </div>
+    <div class="container-fluid">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
                 <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                    <img src="/img/logo-100-100.png" width="100px">
+                    <img src="img/logo-100-100.png" width="100px">
                 </a>
 
             </div>
