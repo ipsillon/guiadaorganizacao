@@ -34,7 +34,7 @@ Route::get('/',  [HomeController::class, 'index']);
     | Pessoas
     |--------------------------------------------------------------------------
     */
-$prefix = 'profiles';
+$prefix = 'profile';
 $controller = 'ProfileController';
 
 Route::group(['prefix' => $prefix, 'as' => $prefix . '.'], function () use ($controller) {
